@@ -31,7 +31,7 @@
           </execution>
         </executions>
         <configuration>
-          <executable>protoc</executable>
+          <executable>D:\tools\protobuf-3.13.0\bin\protoc</executable>
           <arguments>
             <argument>--java_out=${basedir}/src/main/protobuf</argument>
             <argument>--proto_path=${basedir}/src/main/protobuf</argument>
@@ -39,6 +39,23 @@
           </arguments>
         </configuration>
       </plugin>
+      <plugin>
+         <groupId>org.codehaus.mojo</groupId>
+         <artifactId>build-helper-maven-plugin</artifactId>
+         <executions>
+           <execution>
+             <phase>generate-sources</phase>
+             <goals>
+               <goal>add-source</goal>
+             </goals>
+             <configuration>
+               <sources>
+                 <source>src/main/protobuf</source>
+               </sources>
+             </configuration>
+           </execution>
+         </executions>
+       </plugin>
     </plugins>
   </build>
 
