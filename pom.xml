@@ -16,4 +16,30 @@
     </dependency>
   </dependencies>
 
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>3.0.0</version>
+        <executions>
+          <execution>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>exec</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <executable>protoc</executable>
+          <arguments>
+            <argument>--java_out=${basedir}/src/main/protobuf</argument>
+            <argument>--proto_path=${basedir}/src/main/protobuf</argument>
+            <argument>${basedir}/src/main/protobuf/*.proto</argument>
+          </arguments>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
 </project>
