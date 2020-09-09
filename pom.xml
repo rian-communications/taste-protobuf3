@@ -6,7 +6,7 @@
 
   <groupId>study</groupId>
   <artifactId>taste-protobuf3</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>0.0.1</version>
 
   <dependencies>
     <dependency>
@@ -31,7 +31,7 @@
           </execution>
         </executions>
         <configuration>
-          <executable>D:\tools\protobuf-3.13.0\bin\protoc</executable>
+          <executable>protoc</executable>
           <arguments>
             <argument>--java_out=${basedir}/src/main/protobuf</argument>
             <argument>--proto_path=${basedir}/src/main/protobuf</argument>
